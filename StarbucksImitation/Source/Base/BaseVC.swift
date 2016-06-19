@@ -1,25 +1,37 @@
 //
-//  ViewController.swift
+//  BaseVC.swift
 //  StarbucksImitation
 //
-//  Created by lh on 16/6/17.
+//  Created by lh on 16/6/18.
 //  Copyright © 2016年 codwam. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class BaseVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        self.construct()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    func construct() {
+        self.constructView()
+        self.constructLayout()
+    }
+    
+    func constructView() {
+        
+    }
+    
+    func constructLayout() {
+        
+    }
 
 }
-

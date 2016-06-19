@@ -7,13 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EB02E53C1D13286900185044 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB02E53B1D13286900185044 /* AppDelegate.swift */; };
-		EB02E53E1D13286900185044 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB02E53D1D13286900185044 /* ViewController.swift */; };
+		1A0BC0BEC1D326F1C633C070 /* Pods_StarbucksImitation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C5BAD8D9A76044D6C0D62E9 /* Pods_StarbucksImitation.framework */; };
 		EB02E5411D13286900185044 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB02E53F1D13286900185044 /* Main.storyboard */; };
 		EB02E5431D13286900185044 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB02E5421D13286900185044 /* Assets.xcassets */; };
 		EB02E5461D13286900185044 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB02E5441D13286900185044 /* LaunchScreen.storyboard */; };
 		EB02E5511D13286900185044 /* StarbucksImitationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB02E5501D13286900185044 /* StarbucksImitationTests.swift */; };
 		EB02E55C1D13286900185044 /* StarbucksImitationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB02E55B1D13286900185044 /* StarbucksImitationUITests.swift */; };
+		EB237DDA1D158B1400054375 /* GiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB237DD91D158B1400054375 /* GiftView.swift */; };
+		EB237DDD1D158B4400054375 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB237DDC1D158B4400054375 /* BaseView.swift */; };
+		EB237DDF1D158DA300054375 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB237DDE1D158DA300054375 /* BaseVC.swift */; };
+		EB237DE11D158F0A00054375 /* StoresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB237DE01D158F0A00054375 /* StoresView.swift */; };
+		EB237DE31D15919400054375 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB237DE21D15919400054375 /* BannerView.swift */; };
+		EB237DE51D15954300054375 /* CardsInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB237DE41D15954300054375 /* CardsInfoView.swift */; };
+		EBBFA88D1D14D06C00F426CF /* UIView+Starbucks.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBFA88C1D14D06C00F426CF /* UIView+Starbucks.swift */; };
+		EBBFA8A11D14DBC300F426CF /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBFA8A01D14DBC300F426CF /* PageView.swift */; };
+		EBBFA8AC1D14DC8800F426CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBFA8A31D14DC8800F426CF /* AppDelegate.swift */; };
+		EBBFA8AD1D14DC8800F426CF /* AddCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBFA8A61D14DC8800F426CF /* AddCardsView.swift */; };
+		EBBFA8AE1D14DC8800F426CF /* PayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBFA8A71D14DC8800F426CF /* PayVC.swift */; };
+		EBBFA8AF1D14DC8800F426CF /* RootHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBFA8A91D14DC8800F426CF /* RootHeaderView.swift */; };
+		EBBFA8B01D14DC8800F426CF /* RootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBFA8AA1D14DC8800F426CF /* RootVC.swift */; };
+		EBBFA8B21D14DCF000F426CF /* StoresVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBFA8B11D14DCF000F426CF /* StoresVC.swift */; };
+		EBBFA8B61D14DD0F00F426CF /* GiftVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBFA8B51D14DD0F00F426CF /* GiftVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +48,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3C5BAD8D9A76044D6C0D62E9 /* Pods_StarbucksImitation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarbucksImitation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5607D1FF3F64B04342DB288A /* Pods-StarbucksImitation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarbucksImitation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StarbucksImitation/Pods-StarbucksImitation.debug.xcconfig"; sourceTree = "<group>"; };
 		EB02E5381D13286900185044 /* StarbucksImitation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarbucksImitation.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		EB02E53B1D13286900185044 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EB02E53D1D13286900185044 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EB02E5401D13286900185044 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EB02E5421D13286900185044 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB02E5451D13286900185044 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +61,22 @@
 		EB02E5571D13286900185044 /* StarbucksImitationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarbucksImitationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB02E55B1D13286900185044 /* StarbucksImitationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarbucksImitationUITests.swift; sourceTree = "<group>"; };
 		EB02E55D1D13286900185044 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB237DD91D158B1400054375 /* GiftView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftView.swift; sourceTree = "<group>"; };
+		EB237DDC1D158B4400054375 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		EB237DDE1D158DA300054375 /* BaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		EB237DE01D158F0A00054375 /* StoresView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoresView.swift; sourceTree = "<group>"; };
+		EB237DE21D15919400054375 /* BannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
+		EB237DE41D15954300054375 /* CardsInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsInfoView.swift; sourceTree = "<group>"; };
+		EBBFA88C1D14D06C00F426CF /* UIView+Starbucks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Starbucks.swift"; sourceTree = "<group>"; };
+		EBBFA8A01D14DBC300F426CF /* PageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		EBBFA8A31D14DC8800F426CF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EBBFA8A61D14DC8800F426CF /* AddCardsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardsView.swift; sourceTree = "<group>"; };
+		EBBFA8A71D14DC8800F426CF /* PayVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayVC.swift; sourceTree = "<group>"; };
+		EBBFA8A91D14DC8800F426CF /* RootHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootHeaderView.swift; sourceTree = "<group>"; };
+		EBBFA8AA1D14DC8800F426CF /* RootVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootVC.swift; sourceTree = "<group>"; };
+		EBBFA8B11D14DCF000F426CF /* StoresVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoresVC.swift; sourceTree = "<group>"; };
+		EBBFA8B51D14DD0F00F426CF /* GiftVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftVC.swift; sourceTree = "<group>"; };
+		F939C4370503E86751612AE6 /* Pods-StarbucksImitation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarbucksImitation.release.xcconfig"; path = "Pods/Target Support Files/Pods-StarbucksImitation/Pods-StarbucksImitation.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A0BC0BEC1D326F1C633C070 /* Pods_StarbucksImitation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +105,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C48446F0E0B54B0F771F21E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5607D1FF3F64B04342DB288A /* Pods-StarbucksImitation.debug.xcconfig */,
+				F939C4370503E86751612AE6 /* Pods-StarbucksImitation.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		552DC9BF10EFBF727895B836 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3C5BAD8D9A76044D6C0D62E9 /* Pods_StarbucksImitation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EB02E52F1D13286900185044 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +129,8 @@
 				EB02E54F1D13286900185044 /* StarbucksImitationTests */,
 				EB02E55A1D13286900185044 /* StarbucksImitationUITests */,
 				EB02E5391D13286900185044 /* Products */,
+				4C48446F0E0B54B0F771F21E /* Pods */,
+				552DC9BF10EFBF727895B836 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,8 +147,9 @@
 		EB02E53A1D13286900185044 /* StarbucksImitation */ = {
 			isa = PBXGroup;
 			children = (
-				EB02E53B1D13286900185044 /* AppDelegate.swift */,
-				EB02E53D1D13286900185044 /* ViewController.swift */,
+				EBBFA8A21D14DBD600F426CF /* Source */,
+				EBBFA89F1D14DBAF00F426CF /* Vendor */,
+				EBBFA88B1D14D04F00F426CF /* Extension */,
 				EB02E53F1D13286900185044 /* Main.storyboard */,
 				EB02E5421D13286900185044 /* Assets.xcassets */,
 				EB02E5441D13286900185044 /* LaunchScreen.storyboard */,
@@ -125,6 +176,82 @@
 			path = StarbucksImitationUITests;
 			sourceTree = "<group>";
 		};
+		EB237DDB1D158B3800054375 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				EB237DDC1D158B4400054375 /* BaseView.swift */,
+				EB237DDE1D158DA300054375 /* BaseVC.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		EBBFA88B1D14D04F00F426CF /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				EBBFA88C1D14D06C00F426CF /* UIView+Starbucks.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		EBBFA89F1D14DBAF00F426CF /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				EBBFA8A01D14DBC300F426CF /* PageView.swift */,
+				EB237DE21D15919400054375 /* BannerView.swift */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		EBBFA8A21D14DBD600F426CF /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				EBBFA8A31D14DC8800F426CF /* AppDelegate.swift */,
+				EB237DDB1D158B3800054375 /* Base */,
+				EBBFA8A81D14DC8800F426CF /* Root */,
+				EBBFA8A51D14DC8800F426CF /* Pay */,
+				EBBFA8AB1D14DC8800F426CF /* Stores */,
+				EBBFA8A41D14DC8800F426CF /* Gift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		EBBFA8A41D14DC8800F426CF /* Gift */ = {
+			isa = PBXGroup;
+			children = (
+				EBBFA8B51D14DD0F00F426CF /* GiftVC.swift */,
+				EB237DD91D158B1400054375 /* GiftView.swift */,
+			);
+			path = Gift;
+			sourceTree = "<group>";
+		};
+		EBBFA8A51D14DC8800F426CF /* Pay */ = {
+			isa = PBXGroup;
+			children = (
+				EBBFA8A71D14DC8800F426CF /* PayVC.swift */,
+				EBBFA8A61D14DC8800F426CF /* AddCardsView.swift */,
+				EB237DE41D15954300054375 /* CardsInfoView.swift */,
+			);
+			path = Pay;
+			sourceTree = "<group>";
+		};
+		EBBFA8A81D14DC8800F426CF /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				EBBFA8AA1D14DC8800F426CF /* RootVC.swift */,
+				EBBFA8A91D14DC8800F426CF /* RootHeaderView.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		EBBFA8AB1D14DC8800F426CF /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				EBBFA8B11D14DCF000F426CF /* StoresVC.swift */,
+				EB237DE01D158F0A00054375 /* StoresView.swift */,
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +259,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EB02E5601D13286900185044 /* Build configuration list for PBXNativeTarget "StarbucksImitation" */;
 			buildPhases = (
+				855FB2F193F07C045D3C5830 /* [CP] Check Pods Manifest.lock */,
 				EB02E5341D13286900185044 /* Sources */,
 				EB02E5351D13286900185044 /* Frameworks */,
 				EB02E5361D13286900185044 /* Resources */,
+				11C245EACF0CE5EF2B0F351A /* [CP] Embed Pods Frameworks */,
+				AD1EBB3A154CB5D0AC11DFF9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -251,13 +381,74 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		11C245EACF0CE5EF2B0F351A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StarbucksImitation/Pods-StarbucksImitation-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		855FB2F193F07C045D3C5830 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AD1EBB3A154CB5D0AC11DFF9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StarbucksImitation/Pods-StarbucksImitation-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EB02E5341D13286900185044 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB02E53E1D13286900185044 /* ViewController.swift in Sources */,
-				EB02E53C1D13286900185044 /* AppDelegate.swift in Sources */,
+				EB237DE31D15919400054375 /* BannerView.swift in Sources */,
+				EBBFA8AC1D14DC8800F426CF /* AppDelegate.swift in Sources */,
+				EBBFA8B01D14DC8800F426CF /* RootVC.swift in Sources */,
+				EB237DDD1D158B4400054375 /* BaseView.swift in Sources */,
+				EB237DDA1D158B1400054375 /* GiftView.swift in Sources */,
+				EBBFA8B21D14DCF000F426CF /* StoresVC.swift in Sources */,
+				EBBFA88D1D14D06C00F426CF /* UIView+Starbucks.swift in Sources */,
+				EBBFA8AD1D14DC8800F426CF /* AddCardsView.swift in Sources */,
+				EB237DE11D158F0A00054375 /* StoresView.swift in Sources */,
+				EB237DDF1D158DA300054375 /* BaseVC.swift in Sources */,
+				EBBFA8AE1D14DC8800F426CF /* PayVC.swift in Sources */,
+				EBBFA8A11D14DBC300F426CF /* PageView.swift in Sources */,
+				EBBFA8B61D14DD0F00F426CF /* GiftVC.swift in Sources */,
+				EBBFA8AF1D14DC8800F426CF /* RootHeaderView.swift in Sources */,
+				EB237DE51D15954300054375 /* CardsInfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,7 +540,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -389,7 +580,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -399,6 +590,7 @@
 		};
 		EB02E5611D13286900185044 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5607D1FF3F64B04342DB288A /* Pods-StarbucksImitation.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = StarbucksImitation/Info.plist;
@@ -410,6 +602,7 @@
 		};
 		EB02E5621D13286900185044 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F939C4370503E86751612AE6 /* Pods-StarbucksImitation.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = StarbucksImitation/Info.plist;
@@ -484,6 +677,7 @@
 				EB02E5621D13286900185044 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EB02E5631D13286900185044 /* Build configuration list for PBXNativeTarget "StarbucksImitationTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +686,7 @@
 				EB02E5651D13286900185044 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EB02E5661D13286900185044 /* Build configuration list for PBXNativeTarget "StarbucksImitationUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +695,7 @@
 				EB02E5681D13286900185044 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
