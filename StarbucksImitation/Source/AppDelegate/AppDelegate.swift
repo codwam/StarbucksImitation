@@ -6,7 +6,7 @@
 //  Copyright © 2016年 codwam. All rights reserved.
 //
 
-import UIKit
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,13 +17,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        let keyboardManager = IQKeyboardManager.sharedManager()
+        keyboardManager.toolbarPreviousNextAllowedClasses = Set<String>(arrayLiteral: NSStringFromClass(PayCardsInfoView.classForCoder()))
+        keyboardManager.shouldResignOnTouchOutside = true
+        keyboardManager.enable = true
+        
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
         let rootVC = RootVC()
-        self.window?.rootViewController = rootVC
+        let nav = UINavigationController(rootViewController: rootVC)
+        self.window?.rootViewController = nav
+        
         self.window?.makeKeyAndVisible()
         
-//        application.statusBarStyle = .LightContent
-
         return true
     }
 

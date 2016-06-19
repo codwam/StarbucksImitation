@@ -92,19 +92,19 @@ final class AddCardsView: PageView {
         let starbucksCardImage = self.starbucksCardImageView.image!
         let starbucksCardImageRadio = starbucksCardImage.size.height / starbucksCardImage.size.width
         self.starbucksCardImageView.snp_makeConstraints { (make) in
-            make.top.equalTo(self.combinedImageView.snp_bottom)//.offset(10)
+            make.top.equalTo(self.combinedImageView.snp_bottom)
             make.left.right.equalTo(self)
             make.height.equalTo(self.starbucksCardImageView.snp_width).multipliedBy(starbucksCardImageRadio)
         }
         // OR
         self.orLabel.snp_makeConstraints { (make) in
-            make.top.equalTo(self.starbucksCardImageView.snp_bottom).offset(10)
+            make.top.equalTo(self.starbucksCardImageView.snp_bottom).offset(20)
             make.left.right.equalTo(self.starbucksCardImageView)
             make.height.equalTo(16)
         }
         // Cards
         self.cardsView.snp_makeConstraints { (make) in
-            make.top.equalTo(self.orLabel.snp_bottom).offset(10)
+            make.top.equalTo(self.orLabel.snp_bottom).offset(20)
             make.left.right.equalTo(self)
             make.bottom.equalTo(self.agreeLabel.snp_top).offset(-10)
         }
@@ -129,6 +129,7 @@ extension AddCardsView: iCarouselDataSource, iCarouselDelegate {
         if reusingView == nil {
             reusingView = self.cardsContainerImageView[index]
             reusingView!.frame = CGRectInset(carousel.bounds, 20, 0)
+            reusingView?.contentMode = .ScaleAspectFit
         }
         return reusingView!
     }
