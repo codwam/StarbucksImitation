@@ -8,11 +8,9 @@
 
 import UIKit
 
-final class PayVC: BaseVC {
+final class PayVC: PageVC {
     
     private let addCardsView = AddCardsView()
-    private lazy var payCardsInfoView: PayCardsInfoView = PayCardsInfoView()
-    private lazy var payCardsSuccessView: PayCardsSuccessView = PayCardsSuccessView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,11 +25,11 @@ final class PayVC: BaseVC {
     
     override func constructView() {
         self.addCardsView.carouselDidSelectItemAtIndex = {[unowned self] index in
-//            let vc = UIViewController()
-//            self.navigationController?.pushViewController(vc, animated: true)
-            
-            self.payCardsInfoView.bannerView.currentIndex = index
-            self.addPayCardsInfoView()
+            let vc = PayCardsInfoVC()
+            vc.bannerCurrentIndex = index
+//            vc.modalPresentationStyle = .OverCurrentContext
+//            self.navigationController?.presentViewController(vc, animated: false, completion: nil)
+            self.navigationController?.pushViewController(vc, animated: false)
         }
         
         self.view.addSubview(self.addCardsView)
@@ -43,42 +41,9 @@ final class PayVC: BaseVC {
             make.edges.equalTo(self.view)
         }
     }
+    
+    override func instanceOfPageView() -> PageView? {
+        return self.addCardsView
+    }
 
-}
-
-extension PayVC {
-    
-    private func addPayCardsInfoView() {
-        self.payCardsInfoView.doneButton.addTarget(self, action: #selector(cardsInfoDoneClicked), forControlEvents: .TouchUpInside)
-        self.view.addSubview(self.payCardsInfoView)
-        
-        // Cards info
-        self.payCardsInfoView.snp_makeConstraints { (make) in
-            make.edges.equalTo(self.view)
-        }
-    }
-    
-    @objc private func cardsInfoDoneClicked(sender: UIButton) {
-        self.addPayCardsSuccessView()
-    }
-    
-}
-
-extension PayVC {
-    
-    private func addPayCardsSuccessView() {
-        self.payCardsSuccessView.finishedButton.addTarget(self, action: #selector(cardsSuccessFinishedClicked), forControlEvents: .TouchUpInside)
-        self.view.addSubview(self.payCardsSuccessView)
-        
-        // Cards info
-        self.payCardsSuccessView.snp_makeConstraints { (make) in
-            make.edges.equalTo(self.view)
-        }
-    }
-    
-    @objc private func cardsSuccessFinishedClicked(sender: UIButton) {
-        self.payCardsInfoView.removeFromSuperview()
-        self.payCardsSuccessView.removeFromSuperview()
-    }
-    
 }

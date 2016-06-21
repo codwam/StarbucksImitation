@@ -14,13 +14,16 @@ final class RootVC: BaseVC {
     private let headerView = RootHeaderView()
     private var pageVC: UIPageViewController!
     private let pageContainerVCS: [UIViewController] = {
-        let vcs = [
-            PayVC(),
-            StoresVC(),
-            GiftVC()
-        ]
+        let vcs = [PayVC(), StoresVC(), GiftVC()]
         
-        return vcs
+        var navs = [UINavigationController]()
+        for vc in vcs {
+            let nav = BaseNav(rootViewController: vc)
+            nav.navigationBar.hidden = true
+            navs.append(nav)
+        }
+
+        return navs
     }()
     private var presentationPageIndex = 0
     private var isHeaderScroll = false
@@ -104,23 +107,32 @@ extension RootVC: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        let index = self.pageContainerVCS.indexOf(viewController)
-        if let index = index {
-            let preIndex = index.predecessor()
-            if preIndex >= 0 {
-                return self.pageContainerVCS[preIndex]
-            }
-        }
+        let currentViewController = self.pageCurrentViewController(viewController, isBefore: true)
         
-        return nil
+        return currentViewController
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
+        let currentViewController = self.pageCurrentViewController(viewController, isBefore: false)
+        
+        return currentViewController
+    }
+    
+    private func pageCurrentViewController(viewController: UIViewController, isBefore: Bool) -> UIViewController? {
         let index = self.pageContainerVCS.indexOf(viewController)
         if let index = index {
-            let nextIndex = index.successor()
-            if nextIndex < self.pageContainerVCS.count {
-                return self.pageContainerVCS[nextIndex]
+            if isBefore {
+                let preIndex = index.predecessor()
+                if preIndex >= 0 {
+                    let preVC = self.pageContainerVCS[preIndex]
+                    return preVC
+                }
+            } else {
+                let nextIndex = index.successor()
+                if nextIndex < self.pageContainerVCS.count {
+                    let nextVC = self.pageContainerVCS[nextIndex]
+                    return nextVC
+                }
             }
         }
         

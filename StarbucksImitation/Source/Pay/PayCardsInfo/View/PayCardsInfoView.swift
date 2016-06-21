@@ -13,17 +13,18 @@ final class PayCardsInfoView: PageView {
     private var combinedImageView: UIImageView!
     var bannerView: BannerView!
     
+    private var cardInfoView: UIView!
     private var cardHolderView: UIView!
     private var cardHolderLabel: UILabel!
     private var cardHolderTextField: UITextField!
     
     private var cardNumberView: UIView!
     private var cardNumberLabel: UILabel!
-    private var cardNumberTextField: UITextField!
+    private var cardNumberTextField: CardTextField!
     
     private var extView: UIView!
     private var expireDateLabel: UILabel!
-    private var expireDateTextField: UITextField!
+    private var expireDateTextField: DateTextField!
     private var cvvLabel: UILabel!
     private var cvvTextField: UITextField!
     
@@ -37,22 +38,23 @@ final class PayCardsInfoView: PageView {
         // Banner
         self.bannerView = BannerView()
         self.bannerView.localImageNames = ["visa_card_large", "master_card_large", "apple_pay_large"]
+        // Card info
+        self.cardInfoView = UIView()
         // Card holder
         self.cardHolderView = UIView()
         self.cardHolderView.backgroundColor = UIColor.whiteColor()
         self.cardHolderLabel = self.createLabel("Card holder", textColor: UIColor(hexString: "A9AFB6"))
-        self.cardHolderTextField = self.createTextField("Enter your card holder", textColor: UIColor(hexString: "A9AFB6"))
+        self.cardHolderTextField = self.createTextField(nil, placeholder: "Enter your card holder", textColor: UIColor(hexString: "A9AFB6"))
         // Card number
         self.cardNumberView = UIView()
         self.cardNumberLabel = self.createLabel("Card number")
-        self.cardNumberTextField = self.createTextField("Enter your card number")
-        self.cardNumberTextField.keyboardType = .NumberPad
+        self.cardNumberTextField = self.createTextField(CardTextField(), placeholder: "Enter your card number")
         // Expire date & CVV
         self.extView = UIView()
         self.expireDateLabel = self.createLabel("Expire date")
-        self.expireDateTextField = self.createTextField("Enter your expire date")
+        self.expireDateTextField = self.createTextField(DateTextField(), placeholder: "Enter your expire date")
         self.cvvLabel = self.createLabel("CVV")
-        self.cvvTextField = self.createTextField("Enter your CVV")
+        self.cvvTextField = self.createTextField(nil, placeholder: "Enter your CVV")
         self.cvvTextField.keyboardType = .NumberPad
         // Done
         self.doneButton = UIButton(type: .Custom)
@@ -64,15 +66,16 @@ final class PayCardsInfoView: PageView {
         self.addSubview(self.combinedImageView)
         self.addSubview(self.bannerView)
         
-        self.addSubview(self.cardHolderView)
+        self.addSubview(self.cardInfoView)
+        self.cardInfoView.addSubview(self.cardHolderView)
         self.cardHolderView.addSubview(self.cardHolderLabel)
         self.cardHolderView.addSubview(self.cardHolderTextField)
         
-        self.addSubview(self.cardNumberView)
+        self.cardInfoView.addSubview(self.cardNumberView)
         self.cardNumberView.addSubview(self.cardNumberLabel)
         self.cardNumberView.addSubview(self.cardNumberTextField)
         
-        self.addSubview(self.extView)
+        self.cardInfoView.addSubview(self.extView)
         self.extView.addSubview(self.expireDateLabel)
         self.extView.addSubview(self.expireDateTextField)
         self.extView.addSubview(self.cvvLabel)
@@ -90,8 +93,8 @@ final class PayCardsInfoView: PageView {
         return label
     }
     
-    private func createTextField(placeholder: String, textColor: UIColor = UIColor(hexString: "9498A2")) -> UITextField {
-        let textField = UITextField()
+    private func createTextField<T: UITextField>(theClass: T? = nil,placeholder: String, textColor: UIColor = UIColor(hexString: "9498A2")) -> T {
+        let textField = theClass ?? T()
         textField.placeholder = placeholder
         textField.textColor = textColor.flatten()
         textField.font = UIFont.systemFontOfSize(14)
@@ -117,11 +120,16 @@ final class PayCardsInfoView: PageView {
         self.bannerView.snp_makeConstraints { (make) in
             make.top.equalTo(self.combinedImageView.snp_bottom).offset(10)
             make.left.right.equalTo(self)
-//            make.height.equalTo(221)
+        }
+        // Card info
+        self.cardInfoView.snp_makeConstraints { (make) in
+            make.top.equalTo(self.bannerView.snp_bottom).offset(20)
+            make.left.right.equalTo(self.bannerView)
+            make.bottom.equalTo(self.doneButton.snp_top).offset(-containerViewSpacing * 2)
         }
         // Card holder
         self.cardHolderView.snp_makeConstraints { (make) in
-            make.top.equalTo(self.bannerView.snp_bottom).offset(20)
+            make.top.equalTo(self.cardInfoView)
             make.left.right.equalTo(self.bannerView)
             make.height.equalTo(containerViewHeight)
         }
@@ -156,7 +164,7 @@ final class PayCardsInfoView: PageView {
             make.top.equalTo(self.cardNumberView.snp_bottom).offset(containerViewSpacing)
             make.left.right.equalTo(self.cardNumberView)
             make.height.equalTo(containerViewHeight)
-            make.bottom.equalTo(self.doneButton.snp_top).offset(-containerViewSpacing * 2)
+            make.bottom.equalTo(self.cardInfoView)
         }
         self.expireDateLabel.snp_makeConstraints { (make) in
             make.top.equalTo(self.extView).offset(padding)
@@ -183,6 +191,18 @@ final class PayCardsInfoView: PageView {
             make.left.right.bottom.equalTo(self)
             make.height.equalTo(68)
         }
+    }
+    
+    override func prepareForAnimation() {
+        self.cardInfoView.alpha = 0
+        self.doneButton.alpha = 0
+    }
+    
+    override func commitAnimation() {
+        self.layoutIfNeeded()
+        
+        self.cardInfoView.addAppearAnimationWithVelocity()
+        self.doneButton.addAppearAnimationWithVelocity()
     }
 
 }

@@ -9,19 +9,25 @@
 import UIKit
 import iCarousel
 import Spring
+import SnapKit
+
+let mStarbucksCardAnimationTop = 20
+let mCardsViewTopAnimationOffset = 20
 
 final class AddCardsView: PageView {
     
     var carouselDidSelectItemAtIndex: ((index: Int) -> Void)?
     
     private var combinedImageView: UIImageView!
-    private var starbucksCardImageView: UIImageView!
+    var starbucksCardImageView: UIImageView!
     private var orLabel: UILabel!
-    private var cardsView: iCarousel!
-    private var agreeLabel: UILabel!
+    var cardsView: iCarousel!
+    private var agreementLabel: UILabel!
     
-    private var isSetCorner = false
-    private var isSetCardFrame = false
+    var starbucksTopConstraint: ConstraintDescriptionEditable?
+    var cardsViewTopConstraint: ConstraintDescriptionEditable?
+    
+    private var isUserCardScaleAnimation = false
     
     private var cardsContainerImageView: [SpringImageView] {
 //        func createCardImageView(image: UIImage?) -> SpringImageView {
@@ -59,13 +65,13 @@ final class AddCardsView: PageView {
         self.cardsView.dataSource = self
         self.cardsView.delegate = self
         // Agree
-        self.agreeLabel = self.createLabel("I agree to Starbucks Card Terms and \r\n Conditions")
+        self.agreementLabel = self.createLabel("I agree to Starbucks Card Terms and \n Conditions")
         
         self.addSubview(self.combinedImageView)
         self.addSubview(self.starbucksCardImageView)
         self.addSubview(self.orLabel)
         self.addSubview(self.cardsView)
-        self.addSubview(self.agreeLabel)
+        self.addSubview(self.agreementLabel)
     }
     
     private func createLabel(text: String, font: UIFont = UIFont.systemFontOfSize(12)) -> UILabel {
@@ -92,7 +98,7 @@ final class AddCardsView: PageView {
         let starbucksCardImage = self.starbucksCardImageView.image!
         let starbucksCardImageRadio = starbucksCardImage.size.height / starbucksCardImage.size.width
         self.starbucksCardImageView.snp_makeConstraints { (make) in
-            make.top.equalTo(self.combinedImageView.snp_bottom)
+            self.starbucksTopConstraint = make.top.equalTo(self.combinedImageView.snp_bottom)
             make.left.right.equalTo(self)
             make.height.equalTo(self.starbucksCardImageView.snp_width).multipliedBy(starbucksCardImageRadio)
         }
@@ -104,15 +110,33 @@ final class AddCardsView: PageView {
         }
         // Cards
         self.cardsView.snp_makeConstraints { (make) in
-            make.top.equalTo(self.orLabel.snp_bottom).offset(20)
+            self.cardsViewTopConstraint = make.top.equalTo(self.orLabel.snp_bottom).offset(20)
             make.left.right.equalTo(self)
-            make.bottom.equalTo(self.agreeLabel.snp_top).offset(-10)
+            make.bottom.equalTo(self.agreementLabel.snp_top).offset(-10)
         }
         // Agree
-        self.agreeLabel.snp_makeConstraints { (make) in
+        self.agreementLabel.snp_makeConstraints { (make) in
             make.bottom.equalTo(self).offset(-10)
             make.left.equalTo(self).offset(50)
             make.right.equalTo(self).offset(-50)
+        }
+    }
+    
+    override func prepareForAnimation() {
+        self.starbucksCardImageView.alpha = 0
+        self.orLabel.alpha = 0;
+        self.cardsView.alpha = 0;
+        self.agreementLabel.alpha = 0;
+    }
+    
+    override func commitAnimation() {
+        self.layoutIfNeeded()
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(Double(NSEC_PER_SEC) * 0.5)), dispatch_get_main_queue()) {
+            self.starbucksCardImageView.addCardFlyRoateAnimationFromPositionY(self.orLabel.frame.maxY, angel: CGFloat(M_PI_4 / 2))
+            self.orLabel.addAppearAnimationWithVelocity()
+            self.cardsView.addCardFlyAppearAnimationFromPositionY(self.cardsView.frame.maxY)
+            self.agreementLabel.addAppearAnimationWithVelocity()
         }
     }
 
@@ -150,12 +174,44 @@ extension AddCardsView: iCarouselDataSource, iCarouselDelegate {
     }
     
     func carouselDidEndScrollingAnimation(carousel: iCarousel) {
+        // Ignore for first
+        guard self.isUserCardScaleAnimation else {
+            self.isUserCardScaleAnimation = true
+            return
+        }
         let itemView = carousel.currentItemView as! SpringImageView
         itemView.addJerryAnimation()
     }
     
     func carousel(carousel: iCarousel, didSelectItemAtIndex index: Int) {
-        self.carouselDidSelectItemAtIndex?(index: index)
+        self.commitDidSelectedAnimation(carousel, didSelectItemAtIndex: index)
+    }
+    
+    private func commitDidSelectedAnimation(carousel: iCarousel, didSelectItemAtIndex index: Int) {
+        carousel.currentItemView?.pop_removeAllAnimations()
+        
+        //add left and right cards remove animation
+        let leftIndex = carousel.currentItemIndex == 0 ? carousel.numberOfItems - 1 : carousel.currentItemIndex - 1
+        let rightIndex = carousel.currentItemIndex >= carousel.numberOfItems - 1 ? 0 : carousel.currentItemIndex + 1
+        let leftView = carousel.visibleItemViews[leftIndex] as? UIView
+        let rightView = carousel.visibleItemViews[rightIndex] as? UIView
+        leftView?.addCardFlyDisappearAnimationToPositionX(-100)
+        rightView?.addCardFlyDisappearAnimationToPositionX(UIScreen.mainScreen().bounds.width + 100)
+        
+        //add starbucks image  remove animation
+        self.starbucksCardImageView.addFlyAnimationToPositionY(-self.starbucksCardImageView.bounds.height, springSpeed: 0)
+        
+        //add label dispaear animation
+        self.orLabel.addDisappearAnimationWithVelocity()
+        self.agreementLabel.addDisappearAnimationWithVelocity()
+        
+        //add card move to top animation
+        let largeCardAnimation = carousel.currentItemView?.addCardFlyLargeAnimationToPositionY(self.starbucksCardImageView.center.y - carousel.frame.minY - self.combinedImageView.bounds.height)
+        largeCardAnimation?.completionBlock = { _ in
+            dispatch_async(dispatch_get_main_queue(), { 
+                self.carouselDidSelectItemAtIndex?(index: index)
+            })
+        }
     }
     
 }

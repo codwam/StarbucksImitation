@@ -13,11 +13,16 @@
 		EB02E5461D13286900185044 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB02E5441D13286900185044 /* LaunchScreen.storyboard */; };
 		EB02E5511D13286900185044 /* StarbucksImitationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB02E5501D13286900185044 /* StarbucksImitationTests.swift */; };
 		EB02E55C1D13286900185044 /* StarbucksImitationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB02E55B1D13286900185044 /* StarbucksImitationUITests.swift */; };
+		EB1F59851D16BA1500BA151B /* PayCardsInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1F59841D16BA1500BA151B /* PayCardsInfoVC.swift */; };
+		EB1F59881D16BB0000BA151B /* PayCardsSuccessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1F59871D16BB0000BA151B /* PayCardsSuccessVC.swift */; };
 		EB237DDD1D158B4400054375 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB237DDC1D158B4400054375 /* BaseView.swift */; };
 		EB237DDF1D158DA300054375 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB237DDE1D158DA300054375 /* BaseVC.swift */; };
 		EB237DE31D15919400054375 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB237DE21D15919400054375 /* BannerView.swift */; };
+		EB7742301D195A2B00CA58A6 /* DateTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB77422F1D195A2B00CA58A6 /* DateTextField.swift */; };
+		EB7742321D19685000CA58A6 /* CardTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7742311D19685000CA58A6 /* CardTextField.swift */; };
 		EBBFA88D1D14D06C00F426CF /* UIView+Starbucks.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBFA88C1D14D06C00F426CF /* UIView+Starbucks.swift */; };
 		EBBFA8A11D14DBC300F426CF /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBFA8A01D14DBC300F426CF /* PageView.swift */; };
+		EBCB1B621D193EC600E859E0 /* PageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCB1B611D193EC600E859E0 /* PageVC.swift */; };
 		EBE488FE1D16347B00AC8757 /* GiftVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE488FB1D16347B00AC8757 /* GiftVC.swift */; };
 		EBE488FF1D16347B00AC8757 /* GiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE488FD1D16347B00AC8757 /* GiftView.swift */; };
 		EBE489041D1634A700AC8757 /* StoresVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE489011D1634A700AC8757 /* StoresVC.swift */; };
@@ -63,11 +68,16 @@
 		EB02E5571D13286900185044 /* StarbucksImitationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarbucksImitationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB02E55B1D13286900185044 /* StarbucksImitationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarbucksImitationUITests.swift; sourceTree = "<group>"; };
 		EB02E55D1D13286900185044 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB1F59841D16BA1500BA151B /* PayCardsInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayCardsInfoVC.swift; sourceTree = "<group>"; };
+		EB1F59871D16BB0000BA151B /* PayCardsSuccessVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayCardsSuccessVC.swift; sourceTree = "<group>"; };
 		EB237DDC1D158B4400054375 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		EB237DDE1D158DA300054375 /* BaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		EB237DE21D15919400054375 /* BannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
+		EB77422F1D195A2B00CA58A6 /* DateTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTextField.swift; sourceTree = "<group>"; };
+		EB7742311D19685000CA58A6 /* CardTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTextField.swift; sourceTree = "<group>"; };
 		EBBFA88C1D14D06C00F426CF /* UIView+Starbucks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Starbucks.swift"; sourceTree = "<group>"; };
 		EBBFA8A01D14DBC300F426CF /* PageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		EBCB1B611D193EC600E859E0 /* PageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageVC.swift; sourceTree = "<group>"; };
 		EBE488FB1D16347B00AC8757 /* GiftVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftVC.swift; sourceTree = "<group>"; };
 		EBE488FD1D16347B00AC8757 /* GiftView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftView.swift; sourceTree = "<group>"; };
 		EBE489011D1634A700AC8757 /* StoresVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoresVC.swift; sourceTree = "<group>"; };
@@ -180,6 +190,22 @@
 			path = StarbucksImitationUITests;
 			sourceTree = "<group>";
 		};
+		EB1F59831D16BA0200BA151B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EB1F59841D16BA1500BA151B /* PayCardsInfoVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		EB1F59861D16BAF200BA151B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EB1F59871D16BB0000BA151B /* PayCardsSuccessVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		EB237DDB1D158B3800054375 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,7 +228,10 @@
 			isa = PBXGroup;
 			children = (
 				EBBFA8A01D14DBC300F426CF /* PageView.swift */,
+				EBCB1B611D193EC600E859E0 /* PageVC.swift */,
 				EB237DE21D15919400054375 /* BannerView.swift */,
+				EB77422F1D195A2B00CA58A6 /* DateTextField.swift */,
+				EB7742311D19685000CA58A6 /* CardTextField.swift */,
 			);
 			path = Vendor;
 			sourceTree = "<group>";
@@ -318,6 +347,7 @@
 			isa = PBXGroup;
 			children = (
 				EBE489151D167B4900AC8757 /* View */,
+				EB1F59831D16BA0200BA151B /* Controller */,
 			);
 			path = PayCardsInfo;
 			sourceTree = "<group>";
@@ -334,6 +364,7 @@
 			isa = PBXGroup;
 			children = (
 				EBE4891B1D167B5800AC8757 /* View */,
+				EB1F59861D16BAF200BA151B /* Controller */,
 			);
 			path = PayCardsSuccess;
 			sourceTree = "<group>";
@@ -529,16 +560,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB237DE31D15919400054375 /* BannerView.swift in Sources */,
+				EBCB1B621D193EC600E859E0 /* PageVC.swift in Sources */,
 				EBE489041D1634A700AC8757 /* StoresVC.swift in Sources */,
+				EB7742321D19685000CA58A6 /* CardTextField.swift in Sources */,
 				EBE4890C1D1634C100AC8757 /* RootVC.swift in Sources */,
 				EBE4890A1D1634C100AC8757 /* AppDelegate.swift in Sources */,
 				EB237DDD1D158B4400054375 /* BaseView.swift in Sources */,
 				EBBFA88D1D14D06C00F426CF /* UIView+Starbucks.swift in Sources */,
 				EBE4890E1D16689500AC8757 /* BaseNav.swift in Sources */,
 				EBE489181D167B4900AC8757 /* PayVC.swift in Sources */,
+				EB1F59881D16BB0000BA151B /* PayCardsSuccessVC.swift in Sources */,
+				EB7742301D195A2B00CA58A6 /* DateTextField.swift in Sources */,
 				EB237DDF1D158DA300054375 /* BaseVC.swift in Sources */,
 				EBE4891D1D167B7100AC8757 /* PayCardsSuccessView.swift in Sources */,
 				EBBFA8A11D14DBC300F426CF /* PageView.swift in Sources */,
+				EB1F59851D16BA1500BA151B /* PayCardsInfoVC.swift in Sources */,
 				EBE488FF1D16347B00AC8757 /* GiftView.swift in Sources */,
 				EBE4890B1D1634C100AC8757 /* RootHeaderView.swift in Sources */,
 				EBE489051D1634A700AC8757 /* StoresView.swift in Sources */,
