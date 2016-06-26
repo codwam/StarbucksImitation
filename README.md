@@ -1,6 +1,7 @@
 ##StarbucksImitation
 A Starbucks Credit Imitation Demo for iOS, written in Swift pure code.
 
+![](https://github.com/codwam/StarbucksImitation/raw/master/Preview/Demo.gif)
 
 ## Local Resource:
 StarbucksImitation/Preview/
@@ -13,4 +14,5 @@ StarbucksImitation/Preview/
    
 ## Thanks:
    <!--Animations copy from iOSFunningAnimation-->
+   
    [iOSFunningAnimation](https://github.com/JianwenYan/iOSFunningAnimation) ( [@JianwenYan](https://github.com/JianwenYan) )
