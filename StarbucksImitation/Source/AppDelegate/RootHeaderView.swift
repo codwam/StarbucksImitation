@@ -11,8 +11,6 @@ import ChameleonFramework
 import SnapKit
 
 let mRootHeaderViewHeight = 60
-private let mRootHeaderButtonNormalColor = UIColor(hexString: "#888A8C").flatten()
-private let mRootHeaderButtonSelectedColor = UIColor.flatWhiteColor()
 
 /// PAY, STORES, GIFT View
 final class RootHeaderView: BaseView {
@@ -20,6 +18,8 @@ final class RootHeaderView: BaseView {
     var didClickedButton: ((index: Int) -> Void)?
     
     private var buttons = [UIButton]()
+    private let buttonNormalColor = UIColor(hexString: "#888A8C").flatten()
+    private let buttonSelectedColor = UIColor.flatWhiteColor()
     
     override func constructView() {
         let titles = ["PAY", "STORES", "GIFT"]
@@ -43,8 +43,8 @@ final class RootHeaderView: BaseView {
         let button = UIButton(type: .Custom)
         button.setTitle(title, forState: .Normal)
         button.titleLabel?.font = UIFont.systemFontOfSize(15)
-        button.setTitleColor(mRootHeaderButtonNormalColor, forState: .Normal)
-        button.setTitleColor(mRootHeaderButtonSelectedColor, forState: .Selected)
+        button.setTitleColor(buttonNormalColor, forState: .Normal)
+        button.setTitleColor(buttonSelectedColor, forState: .Selected)
         button.setTitleColor(UIColor(hexString: "#49C1FC").flatten(), forState: .Highlighted)
         button.addTarget(self, action: #selector(buttonClicked), forControlEvents: .TouchUpInside)
         

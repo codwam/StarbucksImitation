@@ -6,7 +6,6 @@ use_frameworks!
 target :StarbucksImitation do
 
     pod 'pop'
-    pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift2'
     pod 'ChameleonFramework/Swift'
     pod 'SnapKit'
     pod 'IQKeyboardManagerSwift'

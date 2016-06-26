@@ -34,7 +34,7 @@ final class BannerView: BaseView {
         // Tip
         self.tipLabel = UILabel()
         self.tipLabel.text = "Swipe to change the card"
-        self.tipLabel.textColor = UIColor(hex: "BBBBBB").flatten()
+        self.tipLabel.textColor = UIColor(hexString: "BBBBBB").flatten()
         self.tipLabel.font = UIFont.systemFontOfSize(14)
         self.tipLabel.textAlignment = .Center
         // PageControl

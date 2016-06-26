@@ -6,9 +6,7 @@
 //  Copyright © 2016年 codwam. All rights reserved.
 //
 
-import UIKit
 import iCarousel
-import Spring
 import SnapKit
 
 let mStarbucksCardAnimationTop = 20
@@ -29,8 +27,8 @@ final class AddCardsView: PageView {
     
     private var isUserCardScaleAnimation = false
     
-    private var cardsContainerImageView: [SpringImageView] {
-//        func createCardImageView(image: UIImage?) -> SpringImageView {
+    private var cardsContainerImageView: [UIImageView] {
+//        func createCardImageView(image: UIImage?) -> UIImageView {
 //            let imageView = SpringImageView(image: image)
 //            imageView.frame = CGRectMake(0, 0, 285, 178)
 //            return imageView
@@ -40,9 +38,9 @@ final class AddCardsView: PageView {
 //            createCardImageView(UIImage(named: "visa_card")),
 //            createCardImageView(UIImage(named: "master_card")),
 //            createCardImageView(UIImage(named: "apple_pay"))
-            SpringImageView(image: UIImage(named: "visa_card")),
-            SpringImageView(image: UIImage(named: "master_card")),
-            SpringImageView(image: UIImage(named: "apple_pay"))
+            UIImageView(image: UIImage(named: "visa_card")),
+            UIImageView(image: UIImage(named: "master_card")),
+            UIImageView(image: UIImage(named: "apple_pay"))
         ]
         return imageViews
     }
@@ -174,13 +172,12 @@ extension AddCardsView: iCarouselDataSource, iCarouselDelegate {
     }
     
     func carouselDidEndScrollingAnimation(carousel: iCarousel) {
-        // Ignore for first
+        // Ignore first
         guard self.isUserCardScaleAnimation else {
             self.isUserCardScaleAnimation = true
             return
         }
-        let itemView = carousel.currentItemView as! SpringImageView
-        itemView.addJerryAnimation()
+        carousel.currentItemView?.addJerryAnimation()
     }
     
     func carousel(carousel: iCarousel, didSelectItemAtIndex index: Int) {

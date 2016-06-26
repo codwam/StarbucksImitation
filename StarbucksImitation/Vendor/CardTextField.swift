@@ -12,6 +12,7 @@ final class CardTextField: UITextField {
     
     var whiteSpaceInsertCount = 4
     var limitCardsCount = 20
+    private let trimmingCharacterSet = NSCharacterSet(charactersInString: "0123456789\\b")
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -39,23 +40,26 @@ extension CardTextField: UITextFieldDelegate {
             return true
         }
         
-        text = (text as NSString).stringByReplacingCharactersInRange(range, withString: string)
+        let startIndex = text.startIndex.advancedBy(range.location)
+        let endIndex = startIndex.advancedBy(range.length)
+        let textRange = Range(startIndex..<endIndex)
+        text = text.stringByReplacingCharactersInRange(textRange, withString: string)
         text = text.stringByReplacingOccurrencesOfString(" ", withString: "")
         
         var newString = ""
-        while text.length > 0 {
-            let subString = (text as NSString).substringToIndex(min(text.length, self.whiteSpaceInsertCount))
+        while text.characters.count > 0 {
+            let subIndex = min(text.endIndex, text.startIndex.advancedBy(self.whiteSpaceInsertCount, limit: text.endIndex))
+            let subString = text.substringToIndex(subIndex)
             newString += subString
-            if subString.length == self.whiteSpaceInsertCount {
+            if subString.characters.count == self.whiteSpaceInsertCount {
                 newString += " "
             }
-            text = (text as NSString).substringFromIndex(min(text.length, self.whiteSpaceInsertCount))
+            text = text.substringFromIndex(subIndex)
         }
 
-        let characterSet = NSCharacterSet(charactersInString: "0123456789\\b")
-        newString = newString.stringByTrimmingCharactersInSet(characterSet.invertedSet)
+        newString = newString.stringByTrimmingCharactersInSet(self.trimmingCharacterSet.invertedSet)
 
-        if newString.length >= self.limitCardsCount {
+        if text.characters.count >= self.limitCardsCount {
             return false
         }
 

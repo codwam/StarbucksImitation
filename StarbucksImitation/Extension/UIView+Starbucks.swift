@@ -7,8 +7,6 @@
 //
 
 import pop
-import Spring
-import UIKit
 
 extension UIView {
     
@@ -131,26 +129,6 @@ extension UIView {
         self.addAppearAnimationWithVelocity()
         
         return scaleAnimation
-    }
-    
-}
-
-extension SpringImageView {
-    
-    func addSpringJerryAnimation() {
-        self.animation = Spring.AnimationPreset.Pop.rawValue
-        self.damping = 1
-        self.scaleX = 1.2
-        self.scaleY = 1.2
-        self.animateTo()
-
-        self.scaleX = 0.98
-        self.scaleY = 0.98
-        self.animateTo()
-
-        self.scaleX = 1.0
-        self.scaleY = 1.0
-        self.animate()
     }
     
 }

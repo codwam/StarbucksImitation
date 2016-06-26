@@ -15,7 +15,7 @@ class PageView: BaseView, PageProtocol {
     override func constructView() {
         self.backgroundColor = UIColor(hexString: "F1F1F1").flatten()
         
-        if self.shouldAddRestartAnimationButton() {
+        if self.shouldAddRepeatAnimationButton() {
             self.addRestartAnimationButton()
         }
     }
@@ -46,11 +46,11 @@ class PageView: BaseView, PageProtocol {
 //        self.layoutIfNeeded()
     }
     
-    func shouldAddRestartAnimationButton() -> Bool {
-        return true
+    func shouldAddRepeatAnimationButton() -> Bool {
+        return false
     }
     
-    @objc private func addRestartAnimationButton() {
+    private func addRestartAnimationButton() {
         let repeatAnimationButton = UIButton()
         repeatAnimationButton.setTitle("Repeat Animation", forState: .Normal)
         repeatAnimationButton.setTitleColor(UIColor.flatBlueColorDark(), forState: .Normal)
@@ -83,6 +83,6 @@ protocol PageProtocol {
     
     func commitAnimation()
     // Just for test
-    func shouldAddRestartAnimationButton() -> Bool
+    func shouldAddRepeatAnimationButton() -> Bool
     
 }

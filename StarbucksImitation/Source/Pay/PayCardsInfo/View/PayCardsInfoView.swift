@@ -52,7 +52,7 @@ final class PayCardsInfoView: PageView {
         // Expire date & CVV
         self.extView = UIView()
         self.expireDateLabel = self.createLabel("Expire date")
-        self.expireDateTextField = self.createTextField(DateTextField(), placeholder: "Enter your expire date")
+        self.expireDateTextField = self.createTextField(DateTextField(), placeholder: "Select your expire date")
         self.cvvLabel = self.createLabel("CVV")
         self.cvvTextField = self.createTextField(nil, placeholder: "Enter your CVV")
         self.cvvTextField.keyboardType = .NumberPad
