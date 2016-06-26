@@ -1,6 +1,7 @@
 ##StarbucksImitation
 A Starbucks Credit Imitation Demo for iOS, written in Swift pure code.
 
+
 ## Local Resource:
 StarbucksImitation/Preview/
 
@@ -11,5 +12,5 @@ StarbucksImitation/Preview/
    http://www.materialup.com/posts/starbucks-credit-card-interaction-animation
    
 ## Thanks:
-> 	<!--Animations copy from iOSFunningAnimation-->
+   <!--Animations copy from iOSFunningAnimation-->
    [iOSFunningAnimation](https://github.com/JianwenYan/iOSFunningAnimation) ( [@JianwenYan](https://github.com/JianwenYan) )
